@@ -24,7 +24,10 @@ let keyFilename = process.env.keyFilename;
 
 // keyFilename = path.normalize(keyFilename);
 // Use path.join to construct the file path
-keyFilename = path.join(__dirname, keyFilename);
+// keyFilename = path.join(__dirname, keyFilename);
+// Convert the Windows path to a Linux path
+keyFilename = path.posix.join("/mnt/c", keyFilename.replace(/\\/g, "/"));
+
 
 // Get this from Google Cloud -> Credentials -> Service Accounts
 const storage = new Storage({
