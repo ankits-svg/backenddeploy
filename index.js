@@ -37,22 +37,22 @@ app.use(cors("*"));
 
 //https://front-nuqxdx86l-ankits-projects-b7dffc9e.vercel.app
 // CORS Configuration
-// const corsConfig = [
-//   {
-//     maxAgeSeconds: 3600,
-//     method: ["GET","PATCH"],
-//     origin: ["*"], //   Actual domain
-//     responseHeader: ["*"],
-//   },
-// ];
+const corsConfig = [
+  {
+    maxAgeSeconds: 3600,
+    method: ["GET","PATCH"],
+    origin: ["*"], //   Actual domain
+    responseHeader: ["*"],
+  },
+];
 
-// // Set CORS Configuration for the bucket
-// async function configureBucketCors() {
-//   await storage.bucket(bucketName).setCorsConfiguration(corsConfig);
-//   console.log(`Bucket ${bucketName} was updated with CORS configuration`);
-// }
+// Set CORS Configuration for the bucket
+async function configureBucketCors() {
+  await storage.bucket(bucketName).setCorsConfiguration(corsConfig);
+  console.log(`Bucket ${bucketName} was updated with CORS configuration`);
+}
 
-// configureBucketCors().catch(console.error);
+configureBucketCors().catch(console.error);
 
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(express.json({ limit: "10mb", extended: true }));
