@@ -34,11 +34,11 @@ let keyFilename = process.env.keyFilename;
   // keyFilename = keyFilename.replace(/\\/g, "/");
   // keyFilename = keyFilename.replace("\\", "/")
   // console.log("keyfilename:",keyFilename)
-  keyFilename = path.join(__dirname, keyFilename);
-keyFilename = path.normalize(keyFilename);
+//   keyFilename = path.join(__dirname, keyFilename);
+// keyFilename = path.normalize(keyFilename);
 
-// Handle Windows drive letter if present
-keyFilename = keyFilename.replace(/^([A-Z]):\\/, '');
+// // Handle Windows drive letter if present
+// keyFilename = keyFilename.replace(/^([A-Z]):\\/, '');
 
 // Get this from Google Cloud -> Credentials -> Service Accounts
 const storage = new Storage({
