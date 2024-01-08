@@ -29,7 +29,9 @@ let keyFilename = process.env.keyFilename;
 // keyFilename = path.posix.join("/mnt/c", keyFilename.replace(/\\/g, "/"));
 // Convert the Windows path to an absolute path
 // Convert the Windows path to a Linux path
-keyFilename = path.posix.join("/home/hp/Downloads/", "axial-engine-410216-0df0ce8f2e41.json");
+// keyFilename = path.posix.join("/home/hp/Downloads/", "axial-engine-410216-0df0ce8f2e41.json");
+  // Convert the Windows path to a Linux path
+  keyFilename = keyFilename.replace(/\\/g, "/");
 
 
 // Get this from Google Cloud -> Credentials -> Service Accounts
