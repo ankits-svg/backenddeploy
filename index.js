@@ -33,7 +33,7 @@ const bucketName = process.env.bucket; // Replace with your actual bucket name
 
 port = process.env.port || 2200;
 app.use("/assets", express.static(path.join(__dirname, "assets")));
-app.use(cors({ origin: "*" }));
+app.use(cors());
 
 //https://front-nuqxdx86l-ankits-projects-b7dffc9e.vercel.app
 // CORS Configuration
