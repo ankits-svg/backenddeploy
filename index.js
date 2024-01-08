@@ -26,7 +26,9 @@ let keyFilename = process.env.keyFilename;
 // Use path.join to construct the file path
 // keyFilename = path.join(__dirname, keyFilename);
 // Convert the Windows path to a Linux path
-keyFilename = path.posix.join("/mnt/c", keyFilename.replace(/\\/g, "/"));
+// keyFilename = path.posix.join("/mnt/c", keyFilename.replace(/\\/g, "/"));
+// Convert the Windows path to an absolute path
+  keyFilename = path.resolve(keyFilename);
 
 
 // Get this from Google Cloud -> Credentials -> Service Accounts
